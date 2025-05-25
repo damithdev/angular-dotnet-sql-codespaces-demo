@@ -21,5 +21,5 @@
 				"protocol": "https"
 			}
 	},
-  "postCreateCommand": "cd backend/api && dotnet restore && cd ../../frontend && npm install"
+  "postCreateCommand": "cd backend/api && dotnet restore && dotnet dev-certs https && cd ../../frontend && npm install"
 }
