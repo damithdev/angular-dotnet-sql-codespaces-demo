@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CustomerComponent } from './customer/customer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [CustomerComponent],
+  template: `
+    <app-customer></app-customer>
+  `
 })
 export class AppComponent {
   title = 'frontend-app';
