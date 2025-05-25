@@ -5,7 +5,7 @@ RUN apt-get update \
     && apt-get install -y curl gnupg \
     && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs \
-    && npm install -g @angular/cli
+    && npm install -g @angular/cli --unsafe-perm=true --location=global
 
 # Install MSSQL Tools
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
