@@ -17,5 +17,5 @@
     }
   },
   "forwardPorts": [4200, 5000, 1433],
-  "postCreateCommand": "dotnet --list-sdks && npm install -g @angular/cli --unsafe-perm=true --location=global"
+  "postCreateCommand": "dotnet --list-sdks && npm install -g @angular/cli --unsafe-perm=true --location=global && cd frontend && npm install"
 }
