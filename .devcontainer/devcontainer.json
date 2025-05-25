@@ -18,5 +18,10 @@
     }
   },
   "forwardPorts": [4200, 5000, 1433],
-  "postCreateCommand": "dotnet --list-sdks && npm install -g @angular/cli --unsafe-perm=true --location=global && cd frontend && npm install"
+  "portsAttributes": {
+			"5000": {
+				"protocol": "https"
+			}
+	},
+  "postCreateCommand": "dotnet restore && dotnet dev-certs https && dotnet dev-certs https --trust && npm install -g @angular/cli --unsafe-perm=true --location=global && cd frontend && npm install"
 }
