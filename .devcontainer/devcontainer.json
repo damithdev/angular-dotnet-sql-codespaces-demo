@@ -4,7 +4,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
         "angular.ng-template",
         "dbaeumer.vscode-eslint",
         "ms-azuretools.vscode-docker",
@@ -15,11 +15,19 @@
       ]
     }
   },
-  "forwardPorts": [4200, 5000],
+  "forwardPorts": [4200, 5000, 3000],
   "portsAttributes": {
-			"5000": {
-				"protocol": "https"
-			}
+      "5000": {
+        "protocol": "https"
+      }
 	},
-  "postCreateCommand": "cd backend/api && dotnet restore && dotnet dev-certs https && cd ../../frontend && npm install"
+  "remoteEnv": {
+    "AZ_SQL_SERVER": "${{ secrets.AZ_SQL_SERVER }}",
+    "AZ_SQL_USERNAME": "${{ secrets.AZ_SQL_USERNAME }}",
+    "AZ_SQL_PASSWORD": "${{ secrets.AZ_SQL_PASSWORD }}",
+    "AZ_SQL_DATABASE": "${{ secrets.AZ_SQL_DATABASE }}"
+  },
+  "postCreateCommand": "chmod +x .devcontainer/post-create.sh && .devcontainer/post-create.sh",
+  "postStartCommand": "chmod +x .devcontainer/post-start.sh && .devcontainer/post-start.sh"
+
 }
