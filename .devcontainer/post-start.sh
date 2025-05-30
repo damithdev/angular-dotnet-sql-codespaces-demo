@@ -4,7 +4,7 @@ echo "🚀 Starting SQLPad with environment variables from .env..."
 
 # Export env vars
 set -a
-source /workspaces/angular-dotnet-sql-codespaces-demo/.devcontainer/sqlpad/.env
+source /workspaces/angular-dotnet-sql-codespaces-demo/.devcontainer/sqlpad/env-config
 set +a
 
 

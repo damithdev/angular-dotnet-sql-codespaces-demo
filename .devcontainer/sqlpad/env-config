@@ -1,0 +1,10 @@
+SQLPAD_ADMIN=admin@admin.com
+SQLPAD_ADMIN_PASSWORD=Secret123@
+
+SQLPAD_DB_PATH=/workspaces/sqlpad-data
+SQLPAD_PORT=3000
+SQLPAD_IP=0.0.0.0
+SQLPAD_COOKIE_SECRET="some-super-secret-key"
+SQLPAD_PASSPHRASE="encryption-passphrase"
+SQLPAD_SEED_DATA_PATH=/workspaces/sqlpad-seed
+SQLPAD_APP_LOG_LEVEL=info
