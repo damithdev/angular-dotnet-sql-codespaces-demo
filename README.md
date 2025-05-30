@@ -56,8 +56,7 @@ Once your Codespace boots up, run this command in the terminal to launch SQLPad 
 From the `backend/api` folder, run:
 
 ```bash
-cd backend/api
-dotnet watch run
+dotnet run --project backend/api
 ```
 
 ### 5. 🖥️ Start the Angular Frontend
@@ -65,7 +64,7 @@ dotnet watch run
 From the `frontend` folder, run:
 
 ```bash
-npm start
+npm start --prefix frontend
 ```
 
 ---
