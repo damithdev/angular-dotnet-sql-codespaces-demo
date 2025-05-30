@@ -2,11 +2,10 @@ FROM mcr.microsoft.com/devcontainers/dotnet:8.0
 
 # Install Node.js + npm + Angular CLI
 RUN apt-get update \
-    && apt-get install -y curl gnupg \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y curl gnupg ca-certificates \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
-    && npm install -g @angular/cli --unsafe-perm=true --location=global \
-    && apt-get install -qy curl ca-certificates
+    && npm install -g @angular/cli --unsafe-perm=true
 
 # Install MSSQL Tools
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
@@ -16,7 +15,4 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
 
 ENV PATH="$PATH:/opt/mssql-tools18/bin"
 USER vscode
-
-COPY post-create.sh /workspaces/.devcontainer/post-create.sh
-COPY post-start.sh /workspaces/.devcontainer/post-start.sh
 

@@ -21,13 +21,6 @@
         "protocol": "https"
       }
 	},
-  "remoteEnv": {
-    "AZ_SQL_SERVER": "${{ secrets.AZ_SQL_SERVER }}",
-    "AZ_SQL_USERNAME": "${{ secrets.AZ_SQL_USERNAME }}",
-    "AZ_SQL_PASSWORD": "${{ secrets.AZ_SQL_PASSWORD }}",
-    "AZ_SQL_DATABASE": "${{ secrets.AZ_SQL_DATABASE }}"
-  },
   "postCreateCommand": "chmod +x .devcontainer/post-create.sh && .devcontainer/post-create.sh",
-  "postStartCommand": "chmod +x .devcontainer/post-start.sh && .devcontainer/post-start.sh"
-
+  "postStartCommand": "chmod +x .devcontainer/setup-sqlpad.sh && chmod +x .devcontainer/start-sqlpad.sh && .devcontainer/setup-sqlpad.sh"
 }
